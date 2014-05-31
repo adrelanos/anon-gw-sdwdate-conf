@@ -1,0 +1,25 @@
+## This file is part of Whonix.
+## Copyright (C) 2012 - 2014 Patrick Schleizer <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+Source: anon-gw-sdwdate-conf
+Section: misc
+Priority: optional
+Maintainer: Patrick Schleizer <adrelanos@riseup.net>
+Build-Depends: debhelper (>= 8), faketime, git
+Homepage: https://github.com/Whonix/anon-gw-sdwdate-conf
+Vcs-Browser: https://github.com/Whonix/anon-gw-sdwdate-conf
+Vcs-Git: https://github.com/Whonix/anon-gw-sdwdate-conf.git
+Standards-Version: 3.9.4
+
+Package: anon-gw-sdwdate-conf
+Architecture: all
+Depends: sdwdate, ${misc:Depends}
+Description: Sdwdate Configuration Snippet for Anonymity Distribution Gateways
+ As long as Slow Clock Adjuster (sclockadj)
+ (https://github.com/Whonix/Whonix/issues/169) is not finished, sdwdate
+ occasionally produces clock jumps, i.e. due to time servers being off too
+ much, system clock gets moved too far in past or future.
+ .
+ Tor may get confused by that. Therefore this config ensures, that the system
+ clock is not changed more often than every 24 hours.
